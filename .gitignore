@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual Environment
+.venv/
+venv/
+
+# Environment Variables
+.env
+
+# PyCharm
+.idea/
+
+# Reports
+reports/
+allure-results/
+allure-report/
+logs/
+screenshots/
+
+# Playwright
+playwright-report/
+test-results/
+login_result.png
+
+# OS
+.DS_Store
+Thumbs.db
