@@ -1,6 +1,5 @@
 from pages.base_page import BasePage
 from components.profile_menu import ProfileMenu
-from locators.dashboard_locators import DashboardLocators
 
 
 class DashboardPage(BasePage):
@@ -9,58 +8,23 @@ class DashboardPage(BasePage):
         super().__init__(page)
         self.profile = ProfileMenu(page)
 
-    # ==========================================================
-    # Dashboard Page Verification
-    # ==========================================================
-
     def verify_dashboard_is_loaded(self):
         self.verify_url_contains("overview")
+        self.verify_element_is_visible("main")
 
-        self.verify_element_is_visible(
-            DashboardLocators.DASHBOARD_CONTAINER
-        )
+    def verify_widget_is_displayed(self, locator):
+        self.verify_element_is_visible(locator)
 
-    def verify_dashboard_container(self):
-        self.verify_element_is_visible(
-            DashboardLocators.DASHBOARD_CONTAINER
-        )
+    def verify_widgets_are_displayed(self, widgets):
+        for widget in widgets:
+            self.verify_element_is_visible(widget)
 
-    # ==========================================================
-    # Dashboard Widgets
-    # ==========================================================
+    def verify_time_filter(self, locator):
+        self.verify_element_is_visible(locator)
 
-    def verify_topology_widget_is_displayed(self):
-        self.verify_element_is_visible(
-            DashboardLocators.TOPOLOGY_WIDGET
-        )
+    def verify_refresh_button(self, locator):
+        self.verify_element_is_visible(locator)
 
-    def verify_active_alerts_widget_is_displayed(self):
-        self.verify_element_is_visible(
-            DashboardLocators.ACTIVE_ALERTS_WIDGET
-        )
-
-    def verify_infrastructure_health_widget_is_displayed(self):
-        self.verify_element_is_visible(
-            DashboardLocators.INFRASTRUCTURE_HEALTH_WIDGET
-        )
-
-    def verify_ai_insights_widget_is_displayed(self):
-        self.verify_element_is_visible(
-            DashboardLocators.AI_INSIGHTS_WIDGET
-        )
-
-    # ==========================================================
-    # Dashboard Actions
-    # ==========================================================
-
-    def refresh_dashboard(self):
-        self.click_element(
-            DashboardLocators.REFRESH_BUTTON
-        )
-
+    def refresh_dashboard(self, locator):
+        self.click_element(locator)
         self.wait_for_network_to_be_idle()
-
-    def verify_time_filter(self):
-        self.verify_element_is_visible(
-            DashboardLocators.TIME_RANGE_FILTER
-        )

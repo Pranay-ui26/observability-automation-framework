@@ -10,8 +10,6 @@ class LoginPage(BasePage):
         self.navigate_to_url(BASE_URL)
 
     def enter_email_address(self):
-        self.logger.info(f"Email from .env: {EMAIL_ADDRESS}")
-        print(f"Email from .env: {EMAIL_ADDRESS}")
         self.enter_text(LoginLocators.EMAIL, EMAIL_ADDRESS)
 
     def enter_password(self):
@@ -26,11 +24,7 @@ class LoginPage(BasePage):
 
         expect(button).to_be_enabled()
 
-        print("Button Enabled:", button.is_enabled())
-
         button.click()
-
-        print("Login button clicked")
 
     def login_to_application(self):
         self.open_application()
@@ -44,5 +38,3 @@ class LoginPage(BasePage):
         self.page.screenshot(path="login_result.png")
 
         self.page.wait_for_timeout(3000)
-
-        print("Current URL:", self.page.url)

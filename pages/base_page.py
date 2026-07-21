@@ -52,11 +52,7 @@ class BasePage:
 
         element.wait_for(state="visible")
 
-        print("Before:", element.input_value())
-
         element.fill(value)
-
-        print("After:", element.input_value())
 
     def clear_text(self, locator):
         self.logger.info(f"Clearing text from: {locator}")
@@ -89,9 +85,11 @@ class BasePage:
     # ==========================================================
 
     def verify_element_is_visible(self, locator):
-        self.logger.info(f"Verifying visibility of: {locator}")
+        element = self.page.locator(locator).first
 
-        expect(self.page.locator(locator)).to_be_visible()
+        element.wait_for(state="visible")
+
+        expect(element).to_be_visible()
 
     def verify_element_is_hidden(self, locator):
         self.logger.info(f"Verifying element is hidden: {locator}")
