@@ -1,21 +1,44 @@
 class DashboardLocators:
-
-    PAGE_TITLE = "h1"
-
     DASHBOARD_CONTAINER = "main"
-
-    TOPOLOGY_WIDGET = "text=Topology"
-
-    ACTIVE_ALERTS_WIDGET = "text=Active Alerts"
-
-    INFRASTRUCTURE_HEALTH_WIDGET = "text=Infrastructure Health"
-
+    STATUS_WIDGET = "text=Status"
+    FIRING_ALERTS_WIDGET = "text=Firing Alerts"
+    OPEN_INCIDENTS_WIDGET = "text=Open Incidents"
+    ERROR_RATE_WIDGET = "text=Error Rate"
+    P95_LATENCY_WIDGET = "text=P95 Latency"
+    TRACES_WIDGET = "text=Traces"
+    LOGS_WIDGET = "text=Logs"
+    METRICS_WIDGET = "text=Metrics"
+    ERRORS_WIDGET = "text=Errors"
+    SERVICES_WIDGET = "text=Services"
+    ENDPOINTS_WIDGET = "text=Endpoints"
+    DB_QUERIES_WIDGET = "text=DB Queries"
+    ALERTS_WIDGET = "text=Alerts"
+    INCIDENTS_WIDGET = "text=Incidents"
+    ANOMALIES_WIDGET = "text=Anomalies"
+    HOSTS_WIDGET = "text=Hosts"
+    PODS_WIDGET = "text=Pods"
+    K8S_CLUSTERS_WIDGET = "text=K8s Clusters"
+    NETWORK_DEVICES_WIDGET = "text=Network Devices"
+    LLM_CALLS_WIDGET = "text=LLM Calls"
+    TOKENS_WIDGET = "text=Tokens"
+    AGENTS_WIDGET = "text=Agents"
+    CONVERSATIONS_WIDGET = "text=Conversations"
+    MCP_SESSIONS_WIDGET = "text=MCP Sessions"
+    RAG_WIDGET = "text=RAG"
     AI_INSIGHTS_WIDGET = "text=AI Insights"
-
-    TIME_RANGE_FILTER = "button:has-text('Last')"
-
+    TOPOLOGY_WIDGET = "text=Topology"
+    TIME_FILTER = "button:has-text('24h')"
     REFRESH_BUTTON = "button[aria-label='Refresh']"
-
-    PROFILE_ICON = "button:has(div.text-white)"
-
-    SIGN_OUT_BUTTON = "button:has-text('Sign out')"
+    RECENT_DASHBOARDS_WIDGET = "text=Recent Dashboards"
+    HOST_OVERVIEW_WIDGET = "text=Host Overview"
+    KUBERNETES_CLUSTER_OVERVIEW_WIDGET = "text=Kubernetes Cluster Overview"
+    VIEW_ALL_DASHBOARDS_WIDGET = "text=View all"
+    ACTIVE_ALERTS_WIDGET = "text=Active Alerts"
+    ALL_QUIET_WIDGET = "text=All quiet"
+    NO_ACTIVE_ALERTS_WIDGET = "text=No active alerts"
+    HOST_INFRASTRUCTURE_WIDGET = "text=Host Infrastructure"
+    ONLINE_WIDGET = "text=ONLINE"
+    AVG_CPU_WIDGET = "text=AVG CPU"
+    AVG_MEMORY_WIDGET = "text=AVG MEM"
+    CPU_UTILIZATION_WIDGET = "text=CPU UTILIZATION"
+    VIEW_HOSTS_WIDGET = "text=View hosts"

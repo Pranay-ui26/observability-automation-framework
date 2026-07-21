@@ -2,11 +2,14 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-# Absolute path to the project root .env
+from utilities.logger import Logger
+
+logger = Logger.get_logger(__name__)
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 ENV_FILE = BASE_DIR / ".env"
 
-print(f"Loading .env from: {ENV_FILE}")
+logger.info(f"Loading .env from: {ENV_FILE}")
 
 load_dotenv(dotenv_path=ENV_FILE, override=True)
 
@@ -19,6 +22,6 @@ HEADLESS = os.getenv("HEADLESS", "False").lower() == "true"
 TIMEOUT = int(os.getenv("TIMEOUT", "30000"))
 SLOW_MO = int(os.getenv("SLOW_MO", "0"))
 
-print("BASE_URL :", BASE_URL)
-print("USERNAME :", EMAIL_ADDRESS)
-print("PASSWORD :", "********" if PASSWORD else None)
+logger.info(f"BASE_URL: {BASE_URL}")
+logger.info(f"EMAIL_ADDRESS: {EMAIL_ADDRESS}")
+logger.info(f"PASSWORD: {'********' if PASSWORD else 'Not Configured'}")
